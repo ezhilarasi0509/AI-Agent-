@@ -1,62 +1,133 @@
-# 🤖 AI Agent Project – Day 1: Ingest and Index GitHub Data
+# RepoGuide AI
 
-![Python](https://img.shields.io/badge/Python-3.14-blue)
-![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange)
-![Status](https://img.shields.io/badge/Status-Day%201%20Completed-success)
+RepoGuide AI is a GitHub documentation assistant that answers questions from indexed technical documentation.
 
-## 📌 Project Overview
+The project uses the Evidently AI documentation as a knowledge base. It downloads Markdown and MDX files from GitHub, chunks and indexes the content, retrieves relevant documentation, and generates answers through a Streamlit chat interface.
 
-This project is part of a **7-Day AI Agents Crash Course**, where the goal is to build intelligent AI systems capable of understanding and interacting with data.
+## Project Overview
 
-On **Day 1**, the focus was on:
+Many technical projects have large documentation repositories, making it difficult for users to quickly find answers.
 
-✅ Downloading data from a GitHub repository  
-✅ Processing markdown documentation files  
-✅ Extracting metadata using frontmatter  
-✅ Preparing structured AI-ready data for future indexing and search
+RepoGuide AI solves this by turning GitHub documentation into an interactive question-answering assistant.
 
-This project acts as the **first step in building an AI-powered documentation assistant** that can understand and answer questions from GitHub repositories.
+Users can ask natural-language questions, and the assistant searches indexed documentation before generating an answer.
 
----
+## Features
 
-# 🎯 Objective
+- GitHub documentation ingestion
+- Markdown and MDX file processing
+- Document chunking
+- Search-based retrieval
+- AI agent with tool usage
+- Ollama-powered local inference
+- Streamlit chat interface
+- Interaction logging
+- Offline evaluation workflow
 
-The main objective of Day 1 was to build a **data ingestion pipeline** for GitHub repositories.
+## Tech Stack
 
-Instead of manually reading documentation, this pipeline:
+- Python
+- Streamlit
+- Ollama
+- Mistral
+- Pydantic AI
+- MinSearch
+- python-frontmatter
 
-📥 Downloads a repository as a ZIP file  
-📂 Extracts markdown documentation files (`.md`, `.mdx`)  
-🧠 Reads metadata using frontmatter  
-📝 Extracts clean textual content  
-⚙️ Converts repository documentation into structured data for AI systems
+## Architecture
 
-This structured data will later be used to build an AI Agent capable of answering repository-related questions.
+GitHub Repository
+→ Markdown / MDX Ingestion
+→ Chunking and Preprocessing
+→ Search Index
+→ AI Agent with Search Tool
+→ Ollama / Mistral Response
+→ Streamlit Chat UI
 
----
+## Project Structure
 
-# 🛠️ Technologies Used
+AI-Agent-
+- app/
+  - ingest.py
+  - search_tools.py
+  - search_agent.py
+  - logs.py
+  - streamlit_app.py
+  - requirements.txt
+- course/
+  - day1.ipynb
+- logs/
+- README.md
 
-The following tools and libraries were used:
+## How to Run Locally
 
-| Technology | Purpose |
-|------------|---------|
-| Python 3.14 | Main programming language |
-| Jupyter Notebook | Interactive development environment |
-| requests | Download GitHub repositories |
-| python-frontmatter | Parse markdown metadata |
-| zipfile | Extract ZIP archives |
-| io | Handle in-memory file operations |
-| uv | Package and environment management |
-| Git & GitHub | Version control and project hosting |
+1. Start Ollama:
 
----
+ollama serve
 
-# 📂 Project Structure
+2. Make sure Mistral is installed:
 
-```text
-AI-Agent-/
-│── day1.ipynb
-│── README.md
-│── pyproject.toml
-│── uv.lock
+ollama pull mistral
+
+3. Run the Streamlit app:
+
+cd course
+uv run streamlit run ../app/streamlit_app.py
+
+4. Open the app:
+
+http://localhost:8501
+
+## Example Questions
+
+- How can Evidently help detect data drift and monitor model performance in production?
+- What are reports in Evidently?
+- How can I evaluate model quality using Evidently AI?
+- How can I monitor data drift?
+
+## Evaluation
+
+The project includes an offline evaluation workflow.
+
+The evaluation process includes:
+
+- Collecting interaction logs
+- Testing multiple user questions
+- Checking answer relevance
+- Checking answer clarity
+- Reviewing whether the assistant uses retrieved documentation
+- Saving logs for later analysis
+
+This helps move the project beyond a basic chatbot and toward a more reliable documentation assistant.
+
+## What I Learned
+
+Through this project, I learned:
+
+- How RAG systems work
+- How to ingest GitHub documentation
+- How to process Markdown and MDX files
+- Why chunking is important
+- How search improves AI assistant answers
+- How agents use tools
+- How to use Ollama for local AI inference
+- How to build a Streamlit UI
+- How to evaluate AI assistant responses
+- How to organize notebook code into Python files
+
+## Future Improvements
+
+- Add support for selecting any GitHub repository from the UI
+- Add vector search
+- Add hybrid search
+- Add clickable GitHub source links
+- Add evaluation dashboard
+- Add deployment support for cloud-hosted models
+
+## Acknowledgement
+
+This project was built as part of the 7-Day AI Agents Crash Course by Alexey Grigorev and DataTalks.Club.
+
+## Status
+
+Completed as a portfolio-ready AI agent project.
