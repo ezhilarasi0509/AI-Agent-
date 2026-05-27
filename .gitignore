@@ -1,8 +1,8 @@
 .env
 __pycache__/
+*.pyc
 .ipynb_checkpoints/
 course/.ipynb_checkpoints/
 logs/
 course/logs/
-*.pyc
 .DS_Store

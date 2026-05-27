@@ -12,16 +12,16 @@ import search_agent
 import logs
 
 
-REPO_OWNER = "evidentlyai"
-REPO_NAME = "docs"
+DEFAULT_REPO_OWNER = "evidentlyai"
+DEFAULT_REPO_NAME = "docs"
 MODEL_NAME = "mistral:latest"
 
 
 @st.cache_resource
-def init_app():
+def init_app(repo_owner: str, repo_name: str):
     index = ingest.index_data(
-        repo_owner=REPO_OWNER,
-        repo_name=REPO_NAME,
+        repo_owner=repo_owner,
+        repo_name=repo_name,
         chunk=True
     )
 
@@ -42,10 +42,6 @@ st.set_page_config(
 st.markdown(
     """
     <style>
-    .main {
-        background-color: #f8fafc;
-    }
-
     .block-container {
         padding-top: 2rem;
         padding-bottom: 2rem;
@@ -135,11 +131,14 @@ with st.sidebar:
     st.markdown("## 📘 RepoGuide AI")
     st.caption("GitHub documentation assistant")
 
+    repo_owner = st.text_input("GitHub Repo Owner", value=DEFAULT_REPO_OWNER)
+    repo_name = st.text_input("GitHub Repo Name", value=DEFAULT_REPO_NAME)
+
     st.markdown(
         f"""
         <div class="sidebar-card">
             <b>Knowledge Base</b><br>
-            {REPO_OWNER}/{REPO_NAME}
+            {repo_owner}/{repo_name}
         </div>
         <div class="sidebar-card">
             <b>Model</b><br>
@@ -149,7 +148,7 @@ with st.sidebar:
         unsafe_allow_html=True
     )
 
-    st.info("Ask questions from indexed GitHub documentation. The assistant searches relevant docs before answering.")
+    st.info("Enter any public GitHub documentation repository with Markdown or MDX files.")
 
     if st.button("Clear Chat"):
         st.session_state.messages = []
@@ -185,7 +184,8 @@ st.markdown(
 
 st.markdown('<div class="section-title">Ask RepoGuide AI</div>', unsafe_allow_html=True)
 
-agent = init_app()
+with st.spinner("Indexing selected GitHub repository..."):
+    agent = init_app(repo_owner, repo_name)
 
 if "messages" not in st.session_state:
     st.session_state.messages = []

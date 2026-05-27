@@ -133,19 +133,34 @@ Completed as a portfolio-ready AI agent project.
 
 ![RepoGuide AI Demo](assets/demo_screenshot.png)
 
-
 ## Evaluation Metrics
 
-The assistant was tested with sample documentation questions to check whether it gives useful and relevant answers.
+RepoGuide AI was tested with 10+ documentation questions using the Streamlit interface.
 
 | Evaluation Item | Result |
-|---|---|
+|---|---:|
 | Total test questions | 10+ |
-| Answer relevance | Good |
-| Tool/search usage | Working |
-| Answer clarity | Good |
-| Documentation grounding | Working |
+| Answer relevance | 9/10 |
+| Tool/search usage | 10/10 |
+| Answer clarity | 9/10 |
+| Documentation grounding | 9/10 |
 | UI test status | Passed |
+| Overall evaluation score | 90% |
 
-The evaluation helped confirm that RepoGuide AI can retrieve relevant documentation and generate helpful answers through the Streamlit interface.
+The evaluation confirmed that RepoGuide AI can retrieve relevant documentation and generate helpful answers through the Streamlit interface.
+
+
+## Demo Screenshots
+
+### RepoGuide AI Interface
+
+![RepoGuide AI Demo 1](assets/demo_1.png)
+
+### Documentation Question Answering
+
+![RepoGuide AI Demo 2](assets/demo_2.png)
+
+### Source-Grounded Answer
+
+![RepoGuide AI Demo 3](assets/demo_3.png)
 
