@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-05-27T08:15:19.098482",
+  "agent_name": "docs_agent_ollama",
+  "model": "mistral",
+  "source": "manual-test",
+  "system_prompt": "\nYou are a helpful AI documentation assistant.\n\nAlways use the search_docs tool before answering.\nAnswer based on retrieved documentation whenever possible.\nIf the retrieved documentation is not enough, clearly say that you could not find enough information.\nKeep answers clear, practical, and beginner-friendly.\n",
+  "question": "What are metrics in Evidently?",
+  "answer": " According to the Evidently documentation, metrics are statistical values calculated on a dataset for monitoring model performance or comparing models [1]. These can include accuracy, precision, recall, F1 score, and other performance indicators. In Evidently, they help developers track the quality of machine learning models over time.\n\n[1] Evidently \u2014 \"Metrics\": https://github.com/evidentlyai/docs/tree/master/content/usage/metrics",
+  "tool_used": "search_docs"
+}

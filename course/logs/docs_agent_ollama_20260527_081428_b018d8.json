@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-05-27T08:14:28.915002",
+  "agent_name": "docs_agent_ollama",
+  "model": "mistral",
+  "source": "manual-test",
+  "system_prompt": "\nYou are a helpful AI documentation assistant.\n\nAlways use the search_docs tool before answering.\nAnswer based on retrieved documentation whenever possible.\nIf the retrieved documentation is not enough, clearly say that you could not find enough information.\nKeep answers clear, practical, and beginner-friendly.\n",
+  "question": "What is a report in Evidently?",
+  "answer": " The report feature in Evidently allows users to summarize and present data analysis results. It automatically generates visuals (plots, tables) along with text explaining insights, potential issues, and recommendations based on the defined metrics and thresholds. To generate a report, users would start by defining a report template that specifies the metric(s), threshold(es), comparison group, time range, and any predefined labels or visual components they want included. The generated report can then be presented to stakeholders for review and action.\n\nHere's an example of how you might create a simple report using Evidently:\n\n```python\nfrom evidently import Report\nfrom evidently.dsl import Metric, Dataset\n\n# Define the dataset\ndataset = Dataset(\"my_data\")\n\n# Add your custom metrics to the report (you can use built-in or custom Metrics)\nmetrics = [\n    Metric('accuracy')\n]\n\n# Generate a report\nreport = Report(\n    dataset=dataset,\n    metrics=metrics,\n    labels={'model': 'my_model'}\n)\nresult = report.start()\n```\n\nThe above code snippet would generate a report featuring the accuracy of the specified data and model. The generated report can then be saved or visualized using Evidently's various renderers (e.g., HTML, PDF, Jupyter).",
+  "tool_used": "search_docs"
+}

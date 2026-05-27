@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-05-27T08:15:12.044264",
+  "agent_name": "docs_agent_ollama",
+  "model": "mistral",
+  "source": "manual-test",
+  "system_prompt": "\nYou are a helpful AI documentation assistant.\n\nAlways use the search_docs tool before answering.\nAnswer based on retrieved documentation whenever possible.\nIf the retrieved documentation is not enough, clearly say that you could not find enough information.\nKeep answers clear, practical, and beginner-friendly.\n",
+  "question": "How do I test model quality?",
+  "answer": " To test model quality in machine learning, there are several methods you can apply:\n\n1. Splitting Data: Divide your dataset into training and testing sets. Train your model on the training set and test it on the hidden test data to evaluate its performance. Scikit-learn provides tools like train_test_split for this purpose.\n\n2. Confusion Matrix & Metrics: The confusion matrix is a table used to describe the performance of a classification model with two-class outputs. It's useful because it allows you to calculate additional metrics like accuracy, precision, recall, F1 score.\n\n3. Cross-validation: To obtain reliable performance estimates when having limited data, use cross-validation techniques. Scikit-learn provides various cross-validation strategies such as K-fold and Leave-one-out methods.\n\n4. Validation Curves: Plot the model's performance with respect to different hyperparameters using visual validation curves for selecting optimal parameters. This helps in preventing overfitting and underfitting while training your model.\n\n[{\"name\":\"search_docs\",\"arguments\":{\"query\":\"Testing Model Quality, Confusion Matrix, Performance Metrics, Cross-validation, Validation Curves\"}}]",
+  "tool_used": "search_docs"
+}
