@@ -164,3 +164,10 @@ The evaluation confirmed that RepoGuide AI can retrieve relevant documentation a
 
 ![RepoGuide AI Demo 3](assets/demo_3.png)
 
+
+## Certificate
+
+Completed the 7-Day AI Agents Crash Course.
+
+[View Certificate](certificates/ai_agents_crash_course_certificate.pdf)
+
