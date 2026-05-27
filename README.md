@@ -8,9 +8,7 @@ The project uses the Evidently AI documentation as a knowledge base. It download
 
 Many technical projects have large documentation repositories, making it difficult for users to quickly find answers.
 
-RepoGuide AI solves this by turning GitHub documentation into an interactive question-answering assistant.
-
-Users can ask natural-language questions, and the assistant searches indexed documentation before generating an answer.
+RepoGuide AI solves this by turning GitHub documentation into an interactive question-answering assistant. Users can ask natural-language questions, and the assistant searches indexed documentation before generating an answer.
 
 ## Features
 
@@ -36,45 +34,44 @@ Users can ask natural-language questions, and the assistant searches indexed doc
 
 ## Architecture
 
-GitHub Repository
-→ Markdown / MDX Ingestion
-→ Chunking and Preprocessing
-→ Search Index
-→ AI Agent with Search Tool
-→ Ollama / Mistral Response
-→ Streamlit Chat UI
+GitHub Repository  
+→ Markdown / MDX Ingestion  
+→ Chunking and Preprocessing  
+→ Search Index  
+→ AI Agent with Search Tool  
+→ Ollama / Mistral Response  
+→ Streamlit Chat UI  
 
 ## Project Structure
 
-AI-Agent-
-- app/
-  - ingest.py
-  - search_tools.py
-  - search_agent.py
-  - logs.py
-  - streamlit_app.py
-  - requirements.txt
-- course/
-  - day1.ipynb
-- logs/
-- README.md
+AI-Agent-  
+├── app/  
+│   ├── ingest.py  
+│   ├── search_tools.py  
+│   ├── search_agent.py  
+│   ├── logs.py  
+│   ├── streamlit_app.py  
+│   └── requirements.txt  
+├── course/  
+│   └── day1.ipynb  
+├── README.md  
 
 ## How to Run Locally
 
-1. Start Ollama:
+Start Ollama:
 
 ollama serve
 
-2. Make sure Mistral is installed:
+Make sure Mistral is installed:
 
 ollama pull mistral
 
-3. Run the Streamlit app:
+Run the Streamlit app:
 
-cd course
+cd course  
 uv run streamlit run ../app/streamlit_app.py
 
-4. Open the app:
+Open the app:
 
 http://localhost:8501
 
