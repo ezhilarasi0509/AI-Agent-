@@ -128,3 +128,8 @@ This project was built as part of the 7-Day AI Agents Crash Course by Alexey Gri
 ## Status
 
 Completed as a portfolio-ready AI agent project.
+
+## Demo Screenshot
+
+![RepoGuide AI Demo](assets/demo_screenshot.png)
+
